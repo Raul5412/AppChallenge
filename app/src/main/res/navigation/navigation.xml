@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/ameFragment">
+    <fragment
+        android:id="@+id/ameFragment"
+        android:name="edu.itesm.clubamerica.AmeFragment"
+        android:label="fragment_ame"
+        tools:layout="@layout/fragment_ame" >
+        <action
+            android:id="@+id/action_ameFragment_to_jugadoresFragment2"
+            app:destination="@id/jugadoresFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadoresFragment2"
+        android:name="edu.itesm.clubamerica.JugadoresFragment"
+        android:label="fragment_jugadores"
+        tools:layout="@layout/fragment_jugadores" >
+        <action
+            android:id="@+id/action_jugadoresFragment2_to_jugadorFragment"
+            app:destination="@id/jugadorFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadorFragment"
+        android:name="edu.itesm.clubamerica.JugadorFragment"
+        android:label="fragment_jugador"
+        tools:layout="@layout/fragment_jugador" >
+        <argument
+            android:name="jugador"
+            app:argType="edu.itesm.clubamerica.Jugador" />
+    </fragment>
+</navigation>
